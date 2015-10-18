@@ -9,8 +9,8 @@ env:
 before_install:
   - gem install bundler
   - bundle install
-  - docker pull "${DOCKER_REGISTRY_DEV}/${NAME}:latest" || true
   - docker login -e="${DOCKER_EMAIL}" -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" "${DOCKER_REGISTRY_COM}"
+  - docker pull "${DOCKER_REGISTRY_COM}"/"${NAME}":latest || true
 install:
   - docker build -t "${NAME}" .
 before_deploy:
