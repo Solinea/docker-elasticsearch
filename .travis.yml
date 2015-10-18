@@ -10,6 +10,7 @@ before_install:
   - gem install bundler
   - bundle install
 before_install:
+  - docker pull "${DOCKER_REGISTRY_DEV}/${NAME}:${TRAVIS_BRANCH}"
   - docker login -e="${DOCKER_EMAIL}" -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" "${DOCKER_REGISTRY_COM}"
 install:
   - docker build -t "${NAME}" .
