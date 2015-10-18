@@ -2,7 +2,7 @@
 
 # Adapted from https://github.com/docker-library/elasticsearch
 
-FROM solinea/openjdk
+FROM solinea-docker-community.artifactoryonline.com/openjdk:jre7
 
 MAINTAINER Luke Heidecke <luke@solinea.com>
 
