@@ -12,6 +12,9 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net \
 ENV ELASTICSEARCH_MAJOR 1.7
 ENV ELASTICSEARCH_VERSION 1.7.1
 
+RUN groupadd -g 9010 elasticsearch \
+  && useradd -d /home/elasticsearch -m -s /bin/false -u 9010 -g 9010 elasticsearch
+
 RUN echo "deb http://packages.elasticsearch.org/elasticsearch/$ELASTICSEARCH_MAJOR/debian stable main" \
   > /etc/apt/sources.list.d/elasticsearch.list
 
