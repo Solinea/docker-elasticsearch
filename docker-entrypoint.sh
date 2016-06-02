@@ -9,6 +9,7 @@ fi
 
 # Drop root privileges if we are running elasticsearch
 if [ "$1" = 'elasticsearch' ]; then
+  shift
   exec elasticsearch "$@"
 fi
 

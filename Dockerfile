@@ -34,6 +34,8 @@ COPY docker-entrypoint.sh /
 
 RUN mkdir -p /usr/share/elasticsearch/data \
   && chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/data \
+  && mkdir -p /usr/share/elasticsearch/logs \
+  && chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/logs \
   && chown elasticsearch:elasticsearch /docker-entrypoint.sh \
   && chmod 755 /docker-entrypoint.sh
 
