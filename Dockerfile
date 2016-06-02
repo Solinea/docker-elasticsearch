@@ -9,8 +9,8 @@ MAINTAINER Luke Heidecke <luke@solinea.com>
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net \
                 --recv-keys 46095ACC8548582C1A2699A9D27D666CD88E42B4
 
-ENV ELASTICSEARCH_MAJOR 1.7
-ENV ELASTICSEARCH_VERSION 1.7.1
+ENV ELASTICSEARCH_MAJOR 2.x
+ENV ELASTICSEARCH_VERSION 2.3.3
 
 RUN groupadd -g 9010 elasticsearch \
   && useradd -d /home/elasticsearch -m -s /bin/false -u 9010 -g 9010 elasticsearch
